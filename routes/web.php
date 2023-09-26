@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/template', function () {
-    return view('auth.register-one');
+    return view('dashboard.index');
 });
 
 Route::get('/dashboard', function () {
