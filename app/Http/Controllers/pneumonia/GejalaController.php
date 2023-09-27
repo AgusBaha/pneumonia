@@ -13,7 +13,7 @@ class GejalaController extends Controller
      */
     public function index()
     {
-        $data = Gejala::latest()->paginate(10);
+        $data = Gejala::latest()->paginate(5);
         return view('gejala.index', compact('data'));
     }
 
