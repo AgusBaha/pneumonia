@@ -33,6 +33,9 @@
                                                 No.</th>
                                             <th
                                                 class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                                ID Gejala</th>
+                                            <th
+                                                class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                                 Gejala</th>
                                             <th
                                                 class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
@@ -57,6 +60,11 @@
                                                 <td
                                                     class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                     <p class="mb-0 text-xs font-semibold leading-tight">
+                                                        {{ $data_gejala->kode_gejala }}</p>
+                                                </td>
+                                                <td
+                                                    class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                                    <p class="mb-0 text-xs font-semibold leading-tight">
                                                         {{ $data_gejala->nama_gejala }}</p>
                                                 </td>
                                                 <td
@@ -65,15 +73,15 @@
                                                         {{ $data_gejala->bobot }}</p>
                                                 </td>
                                                 <td
-                                                    class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                                    class="p-1 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                     <div class="ml-auto text-center">
-                                                        <a class="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700"
+                                                        <a class="inline-block px-2 py-1 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700"
                                                             href="{{ route('gejala.edit', $data_gejala->id) }}"><i
                                                                 class="mr-2 fas fa-pencil-alt text-slate-700"
                                                                 aria-hidden="true"></i>Edit</a>
                                                         <form action="{{ route('gejala.destroy', $data_gejala->id) }}"
                                                             method="POST"
-                                                            class="relative z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text">
+                                                            class="relative z-10 inline-block px-2 py-1 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger"><i
@@ -81,10 +89,6 @@
                                                         </form>
 
                                                     </div>
-                                                <td
-                                                    class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-
-                                                </td>
                                                 </td>
                                             </tr>
                                         @empty
