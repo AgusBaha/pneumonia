@@ -31,12 +31,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/gejala', [GejalaController::class, 'index'])->name('gejala.index');
-    Route::get('/gejala/create', [GejalaController::class, 'create'])->name('gejala.create');
-    Route::post('/gejala/store', [GejalaController::class, 'store'])->name('gejala.store');
-    Route::get('/gejala/{gejala}/edit', [GejalaController::class, 'edit'])->name('gejala.edit');
-    Route::put('/gejala/{gejala}', [GejalaController::class, 'update'])->name('gejala.update');
-    Route::delete('/gejala/{gejala}', [GejalaController::class, 'destroy'])->name('gejala.destroy');
+    // Route::get('/gejala', [GejalaController::class, 'index'])->name('gejala.index');
+    // Route::get('/gejala/create', [GejalaController::class, 'create'])->name('gejala.create');
+    // Route::post('/gejala/store', [GejalaController::class, 'store'])->name('gejala.store');
+    // Route::get('/gejala/{gejala}/edit', [GejalaController::class, 'edit'])->name('gejala.edit');
+    // Route::put('/gejala/{gejala}', [GejalaController::class, 'update'])->name('gejala.update');
+    // Route::delete('/gejala/{gejala}', [GejalaController::class, 'destroy'])->name('gejala.destroy');
+
+    Route::resource('gejala', GejalaController::class);
 });
 
 require __DIR__ . '/auth.php';
