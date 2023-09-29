@@ -127,8 +127,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Virtual
-                        Reality</span>
+                    <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Konsultasi</span>
                 </a>
             </li>
 
