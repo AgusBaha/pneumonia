@@ -1,5 +1,5 @@
 <x-apps-layout title="Profile">
-    @push('style')
+    @push('styles')
     @endpush
     <div class="w-full px-6 mx-auto">
         <div class="relative flex items-center p-0 mt-6 overflow-hidden bg-center bg-cover min-h-75 rounded-2xl"
@@ -155,6 +155,6 @@
         </div>
     </div> --}}
 
-    @push('script')
+    @push('scripts')
     @endpush
 </x-apps-layout>

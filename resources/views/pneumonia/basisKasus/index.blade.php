@@ -1,5 +1,5 @@
 <x-apps-layout title="Tabel Data Basis Kasus">
-    @push('style')
+    @push('styles')
     @endpush
 
     <div class="w-full px-6 py-6 mx-auto">
@@ -34,9 +34,10 @@
                         </div>
 
                         <div class="flex-auto p-4">
-                            <div class="flex flex-wrap -mx-3">
+                            <div class="flex-auto p-4 overflow-x-auto">
                                 <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
-                                    <thead class="align-bottom">
+                                    <thead
+                                        class="max-w-full items-center w-full mb-0 align-top border-gray-200 text-slate-500">
                                         <tr>
                                             <th
                                                 class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
@@ -82,7 +83,8 @@
                                                 <td
                                                     class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                     <p class="mb-0 text-xs font-semibold leading-tight">
-                                                        {{ $data->detail_basis_kasus }}</p>
+                                                        {{ Str::limit($data->detail_basis_kasus, 50) }}
+                                                    </p>
                                                 </td>
                                                 <td
                                                     class="p-1 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
@@ -117,7 +119,26 @@
                                         @endforelse
                                     </tbody>
                                 </table>
-                                {!! $dataBasisKasus->links() !!}
+                                <nav aria-label="Page navigation example">
+                                    <ul class="inline-flex -space-x-px text-sm">
+                                        <li>
+                                            <a href="{{ $dataBasisKasus->previousPageUrl() }}"
+                                                class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white @if (!$dataBasisKasus->previousPageUrl()) opacity-50 cursor-not-allowed @endif">Previous</a>
+                                        </li>
+                                        @foreach ($dataBasisKasus->getUrlRange(1, $dataBasisKasus->lastPage()) as $page => $url)
+                                            <li>
+                                                <a href="{{ $url }}"
+                                                    aria-current="{{ $page == $dataBasisKasus->currentPage() ? 'page' : null }}"
+                                                    class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white @if ($page == $dataBasisKasus->currentPage()) text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white @endif">{{ $page }}</a>
+                                            </li>
+                                        @endforeach
+                                        <li>
+                                            <a href="{{ $dataBasisKasus->nextPageUrl() }}"
+                                                class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white @if (!$dataBasisKasus->nextPageUrl()) opacity-50 cursor-not-allowed @endif">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
                             </div>
                         </div>
                     </div>
@@ -126,6 +147,6 @@
         </div>
     </div>
 
-    @push('script')
+    @push('scripts')
     @endpush
 </x-apps-layout>

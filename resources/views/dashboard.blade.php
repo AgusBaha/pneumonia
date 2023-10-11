@@ -1,5 +1,5 @@
 <x-apps-layout title="Dashboard">
-    @push('style')
+    @push('styles')
     @endpush
     <div class="w-full px-6 py-6 mx-auto">
         <!-- row 1 -->
@@ -12,11 +12,12 @@
                         <div class="flex flex-row -mx-3">
                             <div class="flex-none w-2/3 max-w-full px-3">
                                 <div>
-                                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">Today's Money
+                                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">Today's Kasus
                                     </p>
                                     <h5 class="mb-0 font-bold">
-                                        $53,000
-                                        <span class="text-sm leading-normal font-weight-bolder text-lime-500">+55%</span>
+                                        {{ $countKasus }}
+                                        <span
+                                            class="text-sm leading-normal font-weight-bolder text-lime-500">{{ $percentChangeKasus }}</span>
                                     </h5>
                                 </div>
                             </div>
@@ -42,8 +43,9 @@
                                     <p class="mb-0 font-sans text-sm font-semibold leading-normal">Today's Users
                                     </p>
                                     <h5 class="mb-0 font-bold">
-                                        2,300
-                                        <span class="text-sm leading-normal font-weight-bolder text-lime-500">+3%</span>
+                                        {{ $countUser }}
+                                        <span
+                                            class="text-sm leading-normal font-weight-bolder text-lime-500">{{ $percentChangeUser }}</span>
                                     </h5>
                                 </div>
                             </div>
@@ -66,10 +68,11 @@
                         <div class="flex flex-row -mx-3">
                             <div class="flex-none w-2/3 max-w-full px-3">
                                 <div>
-                                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">New Clients</p>
+                                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">New Gejala</p>
                                     <h5 class="mb-0 font-bold">
-                                        +3,462
-                                        <span class="text-sm leading-normal text-red-600 font-weight-bolder">-2%</span>
+                                        {{ $countGejala }}
+                                        <span
+                                            class="text-sm leading-normal text-red-600 font-weight-bolder">{{ $percentChangeGejala }}</span>
                                     </h5>
                                 </div>
                             </div>
@@ -92,10 +95,10 @@
                         <div class="flex flex-row -mx-3">
                             <div class="flex-none w-2/3 max-w-full px-3">
                                 <div>
-                                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">Sales</p>
+                                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">Konsultasi</p>
                                     <h5 class="mb-0 font-bold">
-                                        $103,430
-                                        <span class="text-sm leading-normal font-weight-bolder text-lime-500">+5%</span>
+                                        26
+                                        <span class="text-sm leading-normal font-weight-bolder text-lime-500">+1%</span>
                                     </h5>
                                 </div>
                             </div>
@@ -228,9 +231,9 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <p class="mt-1 mb-0 text-xs font-semibold leading-tight">Sales</p>
+                                        <p class="mt-1 mb-0 text-xs font-semibold leading-tight">View</p>
                                     </div>
-                                    <h4 class="font-bold">435$</h4>
+                                    <h4 class="font-bold">435</h4>
                                     <div class="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200">
                                         <div class="duration-600 ease-soft -mt-0.38 w-3/10 -ml-px flex h-1.5 flex-col justify-center overflow-hidden whitespace-nowrap rounded-lg bg-slate-700 text-center text-white transition-all"
                                             role="progressbar" aria-valuenow="30" aria-valuemin="0"
@@ -287,10 +290,10 @@
                 <div
                     class="border-black/12.5 shadow-soft-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
                     <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid bg-white p-6 pb-0">
-                        <h6>Sales overview</h6>
+                        <h6> overview</h6>
                         <p class="text-sm leading-normal">
                             <i class="fa fa-arrow-up text-lime-500"></i>
-                            <span class="font-semibold">4% more</span> in 2021
+                            <span class="font-semibold">4% more</span> in 2023
                         </p>
                     </div>
                     <div class="flex-auto p-4">
@@ -303,6 +306,6 @@
         </div>
     </div>
 
-    @push('script')
+    @push('scripts')
     @endpush
 </x-apps-layout>

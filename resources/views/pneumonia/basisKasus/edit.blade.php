@@ -52,11 +52,9 @@
                                         <label class="mb-2 ml-1 font-bold text-xs text-slate-700"
                                             for="detailBasisKasus">Detail Basis Kasus</label>
                                         <div class="mb-4">
-                                            <input type="text" id="detailBasisKasus" name="detail_basis_kasus"
-                                                required autofocus value="{{ $basiskasus->detail_basis_kasus }}"
+                                            <textarea id="detailBasisKasus" name="detail_basis_kasus" required autofocus
                                                 class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
-                                                placeholder="Detail Basis Kasus" aria-label="id"
-                                                aria-describedby="id-addon" />
+                                                placeholder="Detail Basis Kasus" aria-label="id" aria-describedby="id-addon" style="height: 7.14em;">{{ $basiskasus->detail_basis_kasus }}</textarea>
                                             @error('detailBasisKasus')
                                                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                                             @enderror

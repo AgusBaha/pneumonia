@@ -1,5 +1,5 @@
 <x-apps-layout title="Update Gejala">
-    @push('style')
+    @push('styles')
     @endpush
     <div class="w-full px-6 py-6 mx-auto">
         <!-- table 1 -->
@@ -62,6 +62,6 @@
         </div>
     </div>
 
-    @push('script')
+    @push('scripts')
     @endpush
 </x-apps-layout>
