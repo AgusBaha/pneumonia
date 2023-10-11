@@ -36,7 +36,7 @@
                              <a href="Javascript:void(0)" class="dropdown-item border-radius-md">
                                  <span>Informasi Penyakit</span>
                              </a>
-                             <a href="Javascript:void(0)" class="dropdown-item border-radius-md">
+                             <a href="{{ route('konsultasi') }}" class="dropdown-item border-radius-md">
                                  <span>Konsultasi</span>
                              </a>
                              <h6
@@ -59,7 +59,7 @@
                              <a href="Javascript:void(0)" class="dropdown-item border-radius-md">
                                  <span>Informasi Penyakit</span>
                              </a>
-                             <a href="Javascript:void(0)" class="dropdown-item border-radius-md">
+                             <a href="{{ route('konsultasi') }}" class="dropdown-item border-radius-md">
                                  <span>Konsultasi</span>
                              </a>
 
@@ -77,9 +77,8 @@
                  </li>
 
                  <li class="nav-item dropdown dropdown-hover mx-2">
-                     <a href="Javascript:void(0)"
-                         class="nav-link ps-2 d-flex cursor-pointer align-items-center font-weight-bold"
-                         id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+                     <a href="{{ route('konsultasi') }}"
+                         class="nav-link ps-2 d-flex cursor-pointer align-items-center font-weight-bold">
                          <i class="material-icons opacity-6 me-2 text-md">article</i>
                          Konsultasi
                          {{-- <!-- <img src="{{ asset('assets/') }}img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2"> --> --}}

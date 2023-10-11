@@ -5,6 +5,7 @@ use App\Http\Controllers\pneumonia\GejalaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\pneumonia\KonsultasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +21,6 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-// Route::get('/template', function () {
-//     return view('welcome');
-// });
-
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])
     ->middleware(['auth', 'verified'])
@@ -43,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('basiskasus', BasisKasusController::class);
     Route::get('/generate-id-basis', [BasisKasusController::class, 'generateId'])->name('generate.basiskasus');
 });
-
+// Konsultasi
+Route::get('/konsultasi', [KonsultasiController::class, 'konsultasi'])->name('konsultasi');
+Route::post('/process-selection', [KonsultasiController::class, 'calculateSimilarity'])->name('similarity');
 // Authentication routes
 require __DIR__ . '/auth.php';
