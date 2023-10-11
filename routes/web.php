@@ -21,9 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/template', function () {
-    return view('dashboard.index');
-});
+// Route::get('/template', function () {
+//     return view('welcome');
+// });
 
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])
