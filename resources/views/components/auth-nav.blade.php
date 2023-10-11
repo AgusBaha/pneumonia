@@ -32,13 +32,13 @@
                         Profile
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
                         href="{{ route('register') }}">
                         <i class="mr-1 fas fa-user-circle opacity-60"></i>
                         Sign Up
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2"
                         href="{{ route('login') }}">

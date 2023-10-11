@@ -12,17 +12,26 @@
                     <div
                         class="relative flex flex-col min-w-0 mt-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
                         <div class="p-4 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                            <div class="flex flex-wrap -mx-3">
-                                <div class="flex items-center flex-none w-1/2 max-w-full px-3">
-                                    <h6 class="mb-0">Data Gejala Table</h6>
-                                </div>
-                                <div class="flex-none w-1/2 max-w-full px-3 text-right">
+                            <div class="flex flex-wrap">
+                                <div class="flex-none w-1/2 max-w-full px-3 text-left">
                                     <a class="inline-block px-6 py-3 font-bold text-center text-white uppercase align-middle transition-all bg-transparent rounded-lg cursor-pointer leading-pro text-xs ease-soft-in shadow-soft-md bg-150 bg-gradient-to-tl from-gray-900 to-slate-800 hover:shadow-soft-xs active:opacity-85 hover:scale-102 tracking-tight-soft bg-x-25"
                                         href="{{ route('gejala.create') }}"> <i class="fas fa-plus"> </i>&nbsp;&nbsp;Add
                                         New Gejala</a>
                                 </div>
+                                <div class="flex-none w-1/2 max-w-full px-3 text-right">
+                                    <form action="{{ route('gejala.index') }}" method="GET">
+                                        <div class="relative flex items-stretch w-full">
+                                            <input type="text" name="search" placeholder="Search..."
+                                                class="block w-full border-2 border-gray-200 rounded py-2 px-4 placeholder-gray-500 focus:outline-none focus:ring focus:ring-indigo-300 focus:border-indigo-300 focus:placeholder-gray-400">
+                                            <button type="submit" class="absolute top-0 right-0 p-2 text-gray-600">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
+
                         <div class="flex-auto p-4">
                             <div class="flex flex-wrap -mx-3">
                                 <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
@@ -46,13 +55,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($data as $key => $data_gejala)
+
+                                        @forelse ($dataGejala as $data_gejala)
                                             <tr>
                                                 <td
                                                     class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                                     <div class="flex px-2 py-1">
                                                         <div class="flex flex-col justify-center">
-                                                            <h6 class="mb-0 text-sm leading-normal">{{ $key + 1 }}
+                                                            <h6 class="mb-0 text-sm leading-normal">
+                                                                {{ $startingNumber++ }}
                                                             </h6>
                                                         </div>
                                                     </div>
@@ -104,6 +115,7 @@
                                         @endforelse
                                     </tbody>
                                 </table>
+                                {!! $dataGejala->links() !!}
                             </div>
                         </div>
                     </div>

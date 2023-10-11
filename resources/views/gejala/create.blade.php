@@ -32,6 +32,10 @@
                                                     class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
                                                     placeholder="gejala" aria-label="gejala"
                                                     aria-describedby="gejala-addon" />
+
+                                                @error('nama_gejala')
+                                                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="max-w-full px-3 md:w-1/2 md:flex-none">
@@ -43,6 +47,10 @@
                                                     class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
                                                     placeholder="bobot" aria-label="bobot"
                                                     aria-describedby="bobot-addon" />
+
+                                                @error('bobot')
+                                                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="text-center">
@@ -51,6 +59,7 @@
                                         </div>
                                     </div>
                                 </form>
+
                             </div>
                         </div>
                     </div>
