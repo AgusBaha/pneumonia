@@ -27,7 +27,7 @@ class GejalaController extends Controller
         $perPage = $dataGejala->perPage();
         $startingNumber = ($current_page - 1) * $perPage + 1;
 
-        return view('gejala.index', compact('dataGejala', 'startingNumber', 'search'));
+        return view('pneumonia.gejala.index', compact('dataGejala', 'startingNumber', 'search'));
     }
 
 
@@ -36,7 +36,7 @@ class GejalaController extends Controller
      */
     public function create()
     {
-        return view('gejala.create');
+        return view('pneumonia.gejala.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class GejalaController extends Controller
      */
     public function edit(Gejala $gejala)
     {
-        return view('gejala.edit', compact('gejala'));
+        return view('pneumonia.gejala.edit', compact('gejala'));
     }
 
     /**

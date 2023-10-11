@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\pneumonia\BasisKasusController;
 use App\Http\Controllers\pneumonia\GejalaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +33,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    // Gejala
     Route::resource('gejala', GejalaController::class);
+
+    // Basis Kasus
+    Route::resource('basiskasus', BasisKasusController::class);
+    Route::get('/generate-id-basis', [BasisKasusController::class, 'generateId'])->name('generate.basiskasus');
 });
 
 // Authentication routes

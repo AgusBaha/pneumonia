@@ -95,7 +95,8 @@
                                                             class="relative z-10 inline-block px-2 py-1 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger"><i
+                                                            <button type="submit" class="btn btn-danger"
+                                                                onclick="return confirm('Apakah Anda yakin ingin menghapus ini?')"><i
                                                                     class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-rose-400 bg-x-25 bg-clip-text"></i>Hapus</button>
                                                         </form>
 

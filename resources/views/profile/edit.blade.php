@@ -29,7 +29,7 @@
                             role="tablist">
                             <li class="z-30 flex-auto text-center">
                                 <a class="z-30 block w-full px-0 py-1 mb-0 transition-all border-0 rounded-lg ease-soft-in-out bg-inherit text-slate-700"
-                                    nav-link active href="javascript:;" role="tab" aria-selected="true">
+                                    nav-link href="javascript:;" role="tab" aria-selected="false">
                                     <svg class="text-slate-700" width="16px" height="16px" viewBox="0 0 42 42"
                                         version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -57,7 +57,7 @@
                             </li>
                             <li class="z-30 flex-auto text-center">
                                 <a class="z-30 block w-full px-0 py-1 mb-0 transition-colors border-0 rounded-lg ease-soft-in-out bg-inherit text-slate-700"
-                                    nav-link href="javascript:;" role="tab" aria-selected="false">
+                                    nav-link active href="javascript:;" role="tab" aria-selected="true">
                                     <svg class="text-slate-700" width="16px" height="16px" viewBox="0 0 40 40"
                                         version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink">

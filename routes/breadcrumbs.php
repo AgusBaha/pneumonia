@@ -2,6 +2,9 @@
 
 // Note: Laravel will automatically resolve `Breadcrumbs::` without
 // this import. This is nice for IDE syntax and refactoring.
+
+use App\Models\pneumonia\BasisKasus;
+use App\Models\pneumonia\Gejala;
 use Diglactic\Breadcrumbs\Breadcrumbs;
 
 // This import is also not required, and you could replace `BreadcrumbTrail $trail`
@@ -39,4 +42,29 @@ Breadcrumbs::for('gejala.edit', function ($trail) {
 Breadcrumbs::for('profile.edit', function ($trail) {
     // $trail->push('Dashboard', route('dashboard')); // Example: Add a 'Home' breadcrumb
     $trail->push('Profile', route('profile.edit')); // Add a 'Gejala' breadcrumb
+});
+
+// Basis Kasus
+Breadcrumbs::for('basiskasus.index', function ($trail) {
+    // $trail->push('Dashboard', route('dashboard')); // Example: Add a 'Home' breadcrumb
+    $trail->push('Basis Kasus', route('basiskasus.index')); // Add a 'Gejala' breadcrumb
+});
+Breadcrumbs::for('basiskasus.create', function ($trail) {
+    $trail->push('Basis Kasus', route('basiskasus.index')); // Example: Add a 'Home' breadcrumb
+    $trail->push('Add New Basis Kasus', route('basiskasus.create')); // Add a 'Gejala' breadcrumb
+});
+
+Breadcrumbs::for('basiskasus.edit', function ($trail) {
+    // Mengambil ID BasisKasus dari parameter rute
+    $basiskasuId = app('request')->route()->parameter('basiskasu');
+
+    // Pastikan $basiskasuId memiliki nilai sebelum menggunakannya
+    if ($basiskasuId) {
+        $basiskasu = BasisKasus::find($basiskasuId);
+
+        if ($basiskasu) {
+            $trail->push('Basis Kasus', route('basiskasus.index'));
+            $trail->push('Edit Basis Kasus (' . $basiskasu->id . ')', route('basiskasus.edit', $basiskasuId));
+        }
+    }
 });
