@@ -1,6 +1,7 @@
 <x-root-page title="Welcome">
     @push('styles')
     @endpush
+
     {{-- Count --}}
     <section class="pt-3 pb-4" id="count-stats">
         <div class="container">
@@ -91,9 +92,8 @@
                     </div>
                 </div>
                 <div class="col-md-5 col-12 my-auto">
-                    <a href="https://www.creative-tim.com/product/material-kit-pro?ref=index-mk2">
-                        <img class="w-100 border-radius-lg shadow-lg"
-                            src="https://s3.amazonaws.com/creativetim_bucket/products/46/original/material-kit-pro.jpg?1632843641"
+                    <a href="javascript:void(0)">
+                        <img class="w-100 border-radius-lg shadow-lg" src="{{ asset('assets/img/pneumonia2.jpg') }}"
                             alt="Product Image">
                     </a>
                 </div>

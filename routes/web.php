@@ -42,5 +42,6 @@ Route::middleware('auth')->group(function () {
 // Konsultasi
 Route::get('/konsultasi', [KonsultasiController::class, 'konsultasi'])->name('konsultasi');
 Route::post('/process-selection', [KonsultasiController::class, 'calculateSimilarity'])->name('similarity');
+Route::get('/informasi', [KonsultasiController::class, 'informasi'])->name('informasi');
 // Authentication routes
 require __DIR__ . '/auth.php';

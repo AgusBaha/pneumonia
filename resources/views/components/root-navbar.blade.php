@@ -33,7 +33,7 @@
                              <a href="Javascript:void(0)" class="dropdown-item border-radius-md">
                                  <span>Tentang Kami</span>
                              </a>
-                             <a href="Javascript:void(0)" class="dropdown-item border-radius-md">
+                             <a href="{{ route('informasi') }}" class="dropdown-item border-radius-md">
                                  <span>Informasi Penyakit</span>
                              </a>
                              <a href="{{ route('konsultasi') }}" class="dropdown-item border-radius-md">
@@ -56,7 +56,7 @@
                              <a href="Javascript:void(0)" class="dropdown-item border-radius-md">
                                  <span>Tentang Kami</span>
                              </a>
-                             <a href="Javascript:void(0)" class="dropdown-item border-radius-md">
+                             <a href="{{ route('informasi') }}" class="dropdown-item border-radius-md">
                                  <span>Informasi Penyakit</span>
                              </a>
                              <a href="{{ route('konsultasi') }}" class="dropdown-item border-radius-md">

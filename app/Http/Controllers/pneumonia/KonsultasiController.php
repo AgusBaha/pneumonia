@@ -82,4 +82,9 @@ class KonsultasiController extends Controller
         // Tampilkan hasil pencarian dengan nilai similarity tertinggi
         return view('pneumonia.konsultasi.hasil_pencarian', ['result' => $highestSimilarityResult]);
     }
+
+    public function informasi()
+    {
+        return view('page.informasi');
+    }
 }

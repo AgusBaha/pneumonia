@@ -61,16 +61,20 @@
     </div>
 
     {{-- Header --}}
-    <x-root-header />
+    <div>
+        @if (request()->route()->getName() == 'informasi')
+            <!-- Tampilkan konten header sesuai dengan route pertama -->
+            <x-root-header1 />
+        @elseif (request()->route()->getName() == 'route_name_2')
+            <!-- Tampilkan konten header sesuai dengan route kedua -->
+        @else
+            <!-- Konten default jika tidak ada route yang cocok -->
+            <x-root-header />
+        @endif
+    </div>
+
     <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
         {{ $slot }}
-        {{-- count --}}
-        {{-- <x-root-count /> --}}
-
-        {{-- Info Konsul --}}
-        {{-- <x-root-konsul /> --}}
-        {{-- Info Pneumonia --}}
-        {{-- <x-root-info-pneumonia /> --}}
 
         <!-- -------   START PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
         <x-root-prefooter />
