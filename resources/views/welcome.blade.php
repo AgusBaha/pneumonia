@@ -55,7 +55,7 @@
                         <p class="text-white mb-5">Apakah Anda akan melanjutkan berkonsultasi untuk mengetahui anda
                             terjangkit
                             Pneumonia!</p>
-                        <a href="Javascript:void(0)" class="btn btn-primary btn-lg mb-3 mb-sm-0">Konsultasi</a>
+                        <a href="{{ route('konsultasi') }}" class="btn btn-primary btn-lg mb-3 mb-sm-0">Konsultasi</a>
                     </div>
                 </div>
             </div>
