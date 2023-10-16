@@ -11,18 +11,32 @@ class GejalaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Gejala::latest()->paginate(10);
-        return view('gejala.index', compact('data'));
+        $search = $request->input('search'); // Ambil nilai pencarian dari request
+        $dataGejala = Gejala::when($search, function ($query) use ($search) {
+            $query->where('kode_gejala', 'like', '%' . $search . '%')
+                ->orWhere('nama_gejala', 'like', '%' . $search . '%')
+                ->orWhere('bobot', 'like', '%' . $search . '%');
+        })->latest()->paginate(10);
+
+        $dataGejala->withPath(route('gejala.index', ['search' => $search])); // Mengatur URL pagination dengan parameter pencarian
+        $dataGejala->appends(['search' => $search]); // Menyertakan query parameter saat berpindah halaman
+
+        $current_page = $dataGejala->currentPage();
+        $perPage = $dataGejala->perPage();
+        $startingNumber = ($current_page - 1) * $perPage + 1;
+
+        return view('pneumonia.gejala.index', compact('dataGejala', 'startingNumber', 'search'));
     }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('gejala.create');
+        return view('pneumonia.gejala.create');
     }
 
     /**
@@ -61,7 +75,7 @@ class GejalaController extends Controller
      */
     public function edit(Gejala $gejala)
     {
-        return view('gejala.edit', compact('gejala'));
+        return view('pneumonia.gejala.edit', compact('gejala'));
     }
 
     /**

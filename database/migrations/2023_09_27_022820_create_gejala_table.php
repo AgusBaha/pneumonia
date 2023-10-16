@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('gejala', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_gejala', 10)->unique();
             $table->string('nama_gejala');
-            $table->integer('bobot');
+            $table->decimal('bobot', 5, 2);
             $table->timestamps();
         });
     }

@@ -2,8 +2,8 @@
      <div class="container">
          <div class="flex flex-wrap -mx-3">
              <div class="flex-shrink-0 w-full max-w-full mx-auto mb-6 text-center lg:flex-0 lg:w-8/12">
-                 <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Company
-                 </a>
+                 {{-- <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Company
+                 </a> --}}
                  <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> About
                      Us </a>
                  <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Team
@@ -12,8 +12,8 @@
                      Products </a>
                  <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Blog
                  </a>
-                 <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Pricing
-                 </a>
+                 {{-- <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Pricing
+                 </a> --}}
              </div>
              <div class="flex-shrink-0 w-full max-w-full mx-auto mt-2 mb-6 text-center lg:flex-0 lg:w-8/12">
                  <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
@@ -25,9 +25,9 @@
                  <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
                      <span class="text-lg fab fa-instagram"></span>
                  </a>
-                 <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
+                 {{-- <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
                      <span class="text-lg fab fa-pinterest"></span>
-                 </a>
+                 </a> --}}
                  <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
                      <span class="text-lg fab fa-github"></span>
                  </a>
@@ -40,7 +40,7 @@
                      <script>
                          document.write(new Date().getFullYear());
                      </script>
-                     Soft by Creative Tim.
+                     Agus Baha.
                  </p>
              </div>
          </div>
